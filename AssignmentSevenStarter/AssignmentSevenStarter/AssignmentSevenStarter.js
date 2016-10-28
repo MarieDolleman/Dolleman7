@@ -40,63 +40,112 @@ function loadPoints(points,texture) {
 
     //flooring
     points.push(vec4(-6.0, 0 , 10, 1));
-    texture.push(vec2(0,0));
-    points.push(vec4(-6.0 , 0 , 0, 1));
     texture.push(vec2(0, 0.5));
+    points.push(vec4(-6.0 , 0 , 0, 1));
+    texture.push(vec2(0, 1));
     points.push(vec4(6.0 , 0 , 0, 1));
-    texture.push(vec2(0.5, 0.5));
+    texture.push(vec2(0.5, 1));
 
     points.push(vec4(-6.0, 0 , 10, 1));
-    texture.push(vec2(0,0));
+    texture.push(vec2(0, 0.5));
     points.push(vec4(6.0 , 0 , 10, 1));
-    texture.push(vec2(0.5, 0));
-    points.push(vec4(6.0 , 0 , 0, 1));
     texture.push(vec2(0.5, 0.5));
+    points.push(vec4(6.0 , 0 , 0, 1));
+    texture.push(vec2(0.5, 1));
 
     //back wall
     points.push(vec4(-6.0, 0 , 0, 1));
-    texture.push(vec2(0,0));
+    texture.push(vec2(0, 0.5));
     points.push(vec4(-6.0, 6 , 0, 1));
     texture.push(vec2(0, 1));
     points.push(vec4(6.0 , 0 , 0, 1));
-    texture.push(vec2(1, 1));
+    texture.push(vec2(0.5, 0.5));
 
     points.push(vec4(6.0, 0 , 0, 1));
-    texture.push(vec2(0,0));
+    texture.push(vec2(0.5, 0.5));
     points.push(vec4(-6.0 , 6 , 0, 1));
-    texture.push(vec2(1, 0));
+    texture.push(vec2(0, 1));
     points.push(vec4(6.0 , 6 , 0, 1));
-    texture.push(vec2(1, 1));
+    texture.push(vec2(0.5, 1));
 
     //left wall
     points.push(vec4(-6.0, 0 , 0, 1));
-    texture.push(vec2(0,0));
+    texture.push(vec2(0.5, 0.5));
     points.push(vec4(-6.0, 6 , 0, 1));
-    texture.push(vec2(0, 1));
+    texture.push(vec2(0.5, 1));
     points.push(vec4(-6.0 , 0 , 10, 1));
-    texture.push(vec2(1, 1));
+    texture.push(vec2(0, 0.5));
 
     points.push(vec4(-6.0, 0 , 10, 1));
-    texture.push(vec2(0,0));
+    texture.push(vec2(0, 0.5));
     points.push(vec4(-6.0 , 6 , 10, 1));
-    texture.push(vec2(1, 0));
+    texture.push(vec2(0, 1));
     points.push(vec4(-6.0 , 6 , 0, 1));
-    texture.push(vec2(1, 1));
+    texture.push(vec2(0.5, 1));
 
     //right wall
     points.push(vec4(6.0, 0 , 0, 1));
-    texture.push(vec2(0,0));
+    texture.push(vec2(0, 0.5));
     points.push(vec4(6.0, 6 , 0, 1));
     texture.push(vec2(0, 1));
     points.push(vec4(6.0 , 0 , 10, 1));
-    texture.push(vec2(1, 1));
+    texture.push(vec2(0.5, 0.5));
 
     points.push(vec4(6.0, 0 , 10, 1));
-    texture.push(vec2(0,0));
+    texture.push(vec2(0.5, 0.5));
     points.push(vec4(6.0 , 6 , 10, 1));
-    texture.push(vec2(1, 0));
+    texture.push(vec2(0.5, 1));
     points.push(vec4(6.0 , 6 , 0, 1));
+    texture.push(vec2(0, 1));
+
+    // ---------------------------------
+    // ART WORK
+    // ---------------------------------
+
+    //back wall art
+    points.push(vec4(-2, 5, 0.1, 1));
+    texture.push(vec2(0.5, 1));
+    points.push(vec4(-2, 1, 0.1, 1));
+    texture.push(vec2(0.5, 0.5));
+    points.push(vec4(2, 5, 0.1, 1));
     texture.push(vec2(1, 1));
+
+    points.push(vec4(-2, 1, 0.1, 1));
+    texture.push(vec2(0.5, 0.5));
+    points.push(vec4(2, 1, 0.1, 1));
+    texture.push(vec2(1, 0.5));
+    points.push(vec4(2, 5, 0.1, 1));
+    texture.push(vec2(1, 1));
+
+    //left wall art
+    points.push(vec4(-5.9, 4, 6, 1));
+    texture.push(vec2(0, 0.5));
+    points.push(vec4(-5.9, 2, 6, 1));
+    texture.push(vec2(0, 0));
+    points.push(vec4(-5.9, 4, 4, 1));
+    texture.push(vec2(0.5, 0.5));
+
+    points.push(vec4(-5.9, 2, 6, 1));
+    texture.push(vec2(0, 0));
+    points.push(vec4(-5.9, 2, 4, 1));
+    texture.push(vec2(0.5, 0));
+    points.push(vec4(-5.9, 4, 4, 1));
+    texture.push(vec2(0.5, 0.5));
+
+    //right wall art
+    points.push(vec4(5.9, 4, 4, 1));
+    texture.push(vec2(0.5, 0.5));
+    points.push(vec4(5.9, 2, 4, 1));
+    texture.push(vec2(0.5, 0));
+    points.push(vec4(5.9, 4, 6, 1));
+    texture.push(vec2(1, 0.5));
+
+    points.push(vec4(5.9, 2, 4, 1));
+    texture.push(vec2(0.5, 0));
+    points.push(vec4(5.9, 2, 6, 1));
+    texture.push(vec2(1, 0));
+    points.push(vec4(5.9, 4, 6, 1));
+    texture.push(vec2(1, 0.5));
 }
 
 

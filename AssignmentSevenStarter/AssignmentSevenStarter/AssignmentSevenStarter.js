@@ -1,7 +1,10 @@
-//name: put your name here
+//name: Marie Dolleman
 //description: Assignment 7
-//proposed points: If I neglect to change this comment and the name above, I agree that I will
-// automatically be deducted 1 point (out of 15)
+//proposed points: 15/15 Because I fixed the walls, floor and added the three pieces of art instead of just two
+//                 and I added the the nearest/linear mipmap. I created a modern art museum with some of my favoerite artists.
+//                 On the back wall is a photograph done by the ParkeHarrisons called The Guardian, 
+//                 on the left a painting called Swans Reflecting Elephants by surrealist Salvador Dali,
+//                 and on the right a painting by Henry Ossawa Tanner called The Disciples See Christ Walking on the Water
 // 
 // key bindings are set so that pressing 'W' will make the eye position move in z direction
 //                                       'S' will make the eye position move in -z direction
@@ -42,16 +45,16 @@ function loadPoints(points,texture) {
     points.push(vec4(-6.0, 0 , 10, 1));
     texture.push(vec2(0, 0.5));
     points.push(vec4(-6.0 , 0 , 0, 1));
-    texture.push(vec2(0, 1));
+    texture.push(vec2(0, 0.6));
     points.push(vec4(6.0 , 0 , 0, 1));
-    texture.push(vec2(0.5, 1));
+    texture.push(vec2(0.5, 0.6));
 
     points.push(vec4(-6.0, 0 , 10, 1));
     texture.push(vec2(0, 0.5));
     points.push(vec4(6.0 , 0 , 10, 1));
     texture.push(vec2(0.5, 0.5));
     points.push(vec4(6.0 , 0 , 0, 1));
-    texture.push(vec2(0.5, 1));
+    texture.push(vec2(0.5, 0.6));
 
     //back wall
     points.push(vec4(-6.0, 0 , 0, 1));
@@ -104,48 +107,48 @@ function loadPoints(points,texture) {
 
     //back wall art
     points.push(vec4(-2, 5, 0.1, 1));
-    texture.push(vec2(0.5, 1));
+    texture.push(vec2(0.5, 0.99));
     points.push(vec4(-2, 1, 0.1, 1));
     texture.push(vec2(0.5, 0.5));
     points.push(vec4(2, 5, 0.1, 1));
-    texture.push(vec2(1, 1));
+    texture.push(vec2(0.9, 0.99));
 
     points.push(vec4(-2, 1, 0.1, 1));
     texture.push(vec2(0.5, 0.5));
     points.push(vec4(2, 1, 0.1, 1));
-    texture.push(vec2(1, 0.5));
+    texture.push(vec2(0.9, 0.5));
     points.push(vec4(2, 5, 0.1, 1));
-    texture.push(vec2(1, 1));
+    texture.push(vec2(0.9, 0.99));
 
     //left wall art
-    points.push(vec4(-5.9, 4, 6, 1));
+    points.push(vec4(-5.9, 5, 3, 1));
     texture.push(vec2(0, 0.5));
-    points.push(vec4(-5.9, 2, 6, 1));
-    texture.push(vec2(0, 0));
-    points.push(vec4(-5.9, 4, 4, 1));
-    texture.push(vec2(0.5, 0.5));
+    points.push(vec4(-5.9, 1, 3, 1));
+    texture.push(vec2(0, 0.01));
+    points.push(vec4(-5.9, 5, 8, 1));
+    texture.push(vec2(0.6, 0.5));
 
-    points.push(vec4(-5.9, 2, 6, 1));
-    texture.push(vec2(0, 0));
-    points.push(vec4(-5.9, 2, 4, 1));
-    texture.push(vec2(0.5, 0));
-    points.push(vec4(-5.9, 4, 4, 1));
-    texture.push(vec2(0.5, 0.5));
+    points.push(vec4(-5.9, 1, 3, 1));
+    texture.push(vec2(0, 0.01));
+    points.push(vec4(-5.9, 1, 8, 1));
+    texture.push(vec2(0.6, 0.01));
+    points.push(vec4(-5.9, 5, 8, 1));
+    texture.push(vec2(0.6, 0.5));
 
     //right wall art
-    points.push(vec4(5.9, 4, 4, 1));
-    texture.push(vec2(0.5, 0.5));
-    points.push(vec4(5.9, 2, 4, 1));
-    texture.push(vec2(0.5, 0));
-    points.push(vec4(5.9, 4, 6, 1));
-    texture.push(vec2(1, 0.5));
+    points.push(vec4(5.9, 5, 4, 1));
+    texture.push(vec2(0.6, 0.5));
+    points.push(vec4(5.9, 1, 4, 1));
+    texture.push(vec2(0.6, 0.01));
+    points.push(vec4(5.9, 5, 8, 1));
+    texture.push(vec2(0.99, 0.5));
 
-    points.push(vec4(5.9, 2, 4, 1));
-    texture.push(vec2(0.5, 0));
-    points.push(vec4(5.9, 2, 6, 1));
-    texture.push(vec2(1, 0));
-    points.push(vec4(5.9, 4, 6, 1));
-    texture.push(vec2(1, 0.5));
+    points.push(vec4(5.9, 1, 4, 1));
+    texture.push(vec2(0.6, 0.01));
+    points.push(vec4(5.9, 1, 8, 1));
+    texture.push(vec2(0.99, 0.01));
+    points.push(vec4(5.9, 5, 8, 1));
+    texture.push(vec2(0.99, 0.5));
 }
 
 
@@ -165,6 +168,23 @@ function configureTexture(image) {
 }
 
 onload = function init()  {
+
+    document.getElementById("Texture Style").onclick = function(event){
+        switch(event.target.index){
+            case 0:
+                gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER,
+                    gl.LINEAR_MIPMAP_NEAREST );
+                gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER,
+                    gl.NEAREST);
+                break;
+            case 1:
+                gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER,
+                    gl.LINEAR_MIPMAP_LINEAR);
+                gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER,
+                    gl.LINEAR);
+                break;
+        };
+    };
 
     canvas = document.getElementById( "gl-canvas" );
 
